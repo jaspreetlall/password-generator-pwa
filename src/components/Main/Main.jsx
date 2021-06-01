@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import './Main.scss';
 
 function Main() {
@@ -68,12 +69,22 @@ function Main() {
           {(generatedPassword)
           ? (
             <div className="main__form-block-password">
-              <p className="main__form-block-password-text ">{generatedPassword}</p>
+              <input
+                className="main__form-block-password-text"
+                type="text"
+                readOnly
+                value={generatedPassword}
+              />
             </div>
           )
           : (
             <div className="main__form-block-password">
-              <p className="main__form-block-password-text main__form-block-password-text--none">Password will be displayed here</p>
+              <input
+                className="main__form-block-password-text main__form-block-password-text--none"
+                type="text"
+                value="Password will be displayed here"
+                readOnly
+              />
             </div>
           )}
         </div>
@@ -108,7 +119,12 @@ function Main() {
 
         <div className="main__form-block main__form-block--buttons">
           <button className="main__form-block-button main__form-block-button--submit" type="submit" disabled={isButtonDisabled}>Generate Password</button>
-          <button className="main__form-block-button" type="button">Copy</button>
+          <CopyToClipboard
+            text={generatedPassword}
+            type="button"
+            >
+            <button className="main__form-block-button" disabled={!(generatedPassword)}>Copy</button>
+          </CopyToClipboard>
         </div>        
       </form>
     </main>
