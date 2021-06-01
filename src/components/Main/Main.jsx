@@ -63,7 +63,7 @@ function Main() {
   return (
     <main className="main">
       <form className="main__form container" onSubmit={generatePassword}>
-        <div className="main__form-block main__form-block--password">
+        <div className="main__form-block">
           <h3 className="main__form-block-title">Generated Password</h3>
           {(generatedPassword)
           ? (
@@ -87,7 +87,7 @@ function Main() {
             </div>
           )}
         </div>
-        <div className="main__form-block main__form-block--length">
+        <div className="main__form-block">
           <h3 className="main__form-block-title">Length: {passwordLength}</h3>
           <div className="main__form-block-input">
             <span className="main__form-block-input-span">8</span>
@@ -96,7 +96,7 @@ function Main() {
           </div>
         </div>
 
-        <div className="main__form-block main__form-block--settings">
+        <div className="main__form-block">
           <h3 className="main__form-block-title">Settings</h3>
           <div className="main__form-block-input">
             <label className="main__form-block-input-label" htmlFor="includeLowercase">Include lowercase</label>
