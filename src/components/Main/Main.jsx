@@ -63,7 +63,6 @@ function Main() {
   return (
     <main className="main">
       <form className="main__form container" onSubmit={generatePassword}>
-        <h2 className="main__form-heading">Generate Password</h2>
         <div className="main__form-block main__form-block--password">
           <h3 className="main__form-block-title">Generated Password</h3>
           {(generatedPassword)
