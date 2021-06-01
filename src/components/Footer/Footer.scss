@@ -15,6 +15,10 @@
       @include flex-center;
       opacity: 0.75;
       margin-left: 16px;
+      &--credit {
+        margin-right: auto;
+        margin-left: 0;
+      }
       &-logo {
         height: 24px;
       }
