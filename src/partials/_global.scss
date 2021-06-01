@@ -1,0 +1,53 @@
+@import "./fonts";
+@import "./variables";
+
+html {
+	box-sizing: border-box;
+	font-size: 10px;
+	background-color: $fill-background;
+	color: $color;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	font-family: $font-global;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+hr,
+ul,
+li,
+img,
+p,
+hr,
+input,
+label,
+form,
+button {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: $color;
+}
+
+.container {
+	width: 92.5%;
+	margin: auto;
+}

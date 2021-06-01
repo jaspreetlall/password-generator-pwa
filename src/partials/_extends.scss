@@ -1,0 +1,14 @@
+%checkbox-defaults {
+	position: relative;
+	display: inline-block;
+	border: 2px solid white;
+	content: '';
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	top: 50%;
+	left: 50%;
+	background-color: $fill-light;
+	visibility: visible;
+	transform: translate(-50%, -50%);
+}

@@ -1,0 +1,56 @@
+// Mixins
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin flex-center($direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: center;
+	align-items: center;
+}
+
+// Breakpoints - Tablet
+
+@mixin tablet {
+	@media screen and (min-width: 720px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+// Container mixin
+
+@mixin container {
+	width: 87vw;
+	margin: auto;
+	@include tablet {
+		width: 84.375vw;
+	}
+	@include desktop {
+		width: 80.3125vw;
+		max-width: 1200px;
+	}
+}
+
+// Button mixin
+
+@mixin button {
+	box-sizing: border-box;
+	border-radius: 6px;
+	border: 1px solid transparent;
+	height: 50px;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 0 16px;
+	transition: linear 0.2s;
+}
