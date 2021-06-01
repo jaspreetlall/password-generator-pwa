@@ -4,15 +4,25 @@
 
 .main {
   padding-top: 20px;
+  @include tablet {
+    padding-top: 40px;
+  }
   &__form {
     height: 100%;
     &-block {
       padding-bottom: 16px;
+      @include tablet {
+        padding-bottom: 36px;
+      }
       &-title {
         font-size: 1.2rem;
         text-transform: uppercase;
         color: $color-label;
         padding-bottom: 6px;
+        @include tablet {
+          font-size: 1.4rem;
+          padding-bottom: 10px;
+        }
       }
       &-password {
         @include flex(row, space-between, center);
@@ -21,21 +31,27 @@
         border-radius: $border-radius;
         padding: 2px 16px 2px 16px;
         height: 96px;
+        @include tablet {
+          padding: 4px 36px 4px 36px;
+          height: 120px;
+        }
         &-text {
           background-color: transparent;
           border: none;
           outline: none;
           color: $color;
-          font-weight: 700;
           font-size: 1.6rem;
+          font-weight: 700;
           width: 100%;
-          padding: 0;
           text-align: center;
           letter-spacing: 4px;
+          transition: color ease-in-out 0.2s;
+          @include tablet {
+            letter-spacing: 6px;
+            font-size: 1.8rem;
+          }
           &--none {
             color: $color-light;
-            font-weight: 700;
-            font-size: 1.6rem;
             letter-spacing: normal;
           }
         }
@@ -44,12 +60,21 @@
         @extend .main__form-block-password;
         height: 64px;
         margin-bottom: 20px;
+        @include tablet {
+          height: 72px;
+          margin-bottom: 24px;
+        }
         &-span {
-          font-size: 1.3rem;
+          font-size: 1.6rem;
+          @include tablet {
+            font-size: 1.8rem;
+          }
         }
         &-label {
-          @extend .main__form-block-input-span;
           font-size: 1.8rem;
+          @include tablet {
+            font-size: 2rem;
+          }
         }
         &-field {
           &[type='checkbox']::after {
@@ -68,7 +93,7 @@
       &-button {
         @include button;
         font-weight: 700;
-        margin-right: 16px;
+        margin-left: 16px;
         font-size: 1.6rem;
         color: $color;
         background-color: $fill-button;
@@ -76,9 +101,12 @@
           background-color: $fill-button-hover;
         }
         &--submit {
-          margin-right: 0;
+          margin-left: 0;
           flex-grow: 1;
-            background-color: $fill-button;
+          background-color: $fill-button;
+          @include tablet {
+            flex-grow: 0;
+          }
           &:hover {
             background-color: $fill-button-hover;
           }
@@ -87,8 +115,10 @@
       &--buttons {
         @include flex(row, space-between, center);
         background-color: transparent;
-        flex-direction: row-reverse;
         padding-bottom: 40px;
+        @include tablet {
+          @include flex(row, flex-end, center);
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 @import "./fonts";
 @import "./variables";
+@import "./mixins";
 
 html {
 	box-sizing: border-box;
@@ -50,4 +51,7 @@ a {
 .container {
 	width: 92.5%;
 	margin: auto;
+	@include tablet {
+		width: 87%;
+	}
 }
