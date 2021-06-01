@@ -19,6 +19,9 @@ html {
 body {
 	margin: 0 0 $height-footer 0;
 	padding: 0;
+	@include desktop {
+		margin: 0;
+	}
 }
 
 h1,
@@ -53,5 +56,8 @@ a {
 	margin: auto;
 	@include tablet {
 		width: 87%;
+	}
+	@include desktop {
+		width: 80%;
 	}
 }

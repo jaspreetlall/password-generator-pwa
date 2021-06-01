@@ -63,7 +63,7 @@ function Main() {
   return (
     <main className="main">
       <form className="main__form container" onSubmit={generatePassword}>
-        <div className="main__form-block">
+        <div className="main__form-block main__form-block--password">
           <h3 className="main__form-block-title">Generated Password</h3>
           {(generatedPassword)
           ? (
@@ -87,16 +87,15 @@ function Main() {
             </div>
           )}
         </div>
-        <div className="main__form-block">
+        <div className="main__form-block main__form-block--length">
           <h3 className="main__form-block-title">Length: {passwordLength}</h3>
-          <div className="main__form-block-input">
+          <div className="main__form-block-input main__form-block-input--length">
             <span className="main__form-block-input-span">8</span>
             <input className="main__form-block-input-field main__form-block-input-field--length" type="range" name="passwordLength" id="passwordLength" min="8" max="24" value={passwordLength} onChange={handlePasswordLength}/>
             <span className="main__form-block-input-span">24</span>
           </div>
         </div>
-
-        <div className="main__form-block">
+        <div className="main__form-block main__form-block--settings">
           <h3 className="main__form-block-title">Settings</h3>
           <div className="main__form-block-input">
             <label className="main__form-block-input-label" htmlFor="includeLowercase">Include lowercase</label>
@@ -115,7 +114,6 @@ function Main() {
             <input className="main__form-block-input-field" type="checkbox" name="includeSymbols" id="includeSymbols" checked={includeSymbols} onChange={handleCheckboxSymbols}/>
           </div>
         </div>
-
         <div className="main__form-block main__form-block--buttons">
           <button className="main__form-block-button main__form-block-button--submit" type="submit" disabled={isButtonDisabled}>Generate Password</button>
           <CopyToClipboard

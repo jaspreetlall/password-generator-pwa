@@ -9,10 +9,46 @@
   }
   &__form {
     height: 100%;
+    @include desktop {
+      @include flex(row, space-between, flex-start);
+      flex-wrap: wrap;
+    }
     &-block {
       padding-bottom: 16px;
       @include tablet {
         padding-bottom: 36px;
+      }
+      @include desktop {
+        width: 48%;
+      }
+      &--password {
+        @include desktop {
+          order: 2;
+        }
+      }
+      &--length {
+        @include desktop {
+          order: 1;
+        }
+      }
+      &--settings {
+        @include desktop {
+          order: 3;
+        }
+      }
+      &--buttons {
+        @include flex(row, space-between, center);
+        background-color: transparent;
+        padding-bottom: 40px;
+        @include tablet {
+          @include flex(row, flex-end, center);
+        }
+        @include desktop {
+          @include flex(column, flex-end, flex-end);
+          align-self: flex-end;
+          padding-bottom: 36px;
+          order: 5;
+        }
       }
       &-title {
         font-size: 1.2rem;
@@ -34,6 +70,9 @@
         @include tablet {
           padding: 4px 36px 4px 36px;
           height: 120px;
+        }
+        @include desktop {
+          height: 96px;
         }
         &-text {
           background-color: transparent;
@@ -63,6 +102,12 @@
         @include tablet {
           height: 72px;
           margin-bottom: 24px;
+        }
+        &--length {
+          @include desktop {
+            height: 96px;
+            margin-bottom: 0;
+          }
         }
         &-span {
           font-size: 1.6rem;
@@ -100,6 +145,10 @@
         &:hover {
           background-color: $fill-button-hover;
         }
+        @include desktop {
+          margin-bottom: 24px;
+          width: 300px
+        }
         &--submit {
           margin-left: 0;
           flex-grow: 1;
@@ -110,14 +159,6 @@
           &:hover {
             background-color: $fill-button-hover;
           }
-        }
-      }
-      &--buttons {
-        @include flex(row, space-between, center);
-        background-color: transparent;
-        padding-bottom: 40px;
-        @include tablet {
-          @include flex(row, flex-end, center);
         }
       }
     }
