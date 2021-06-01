@@ -1,0 +1,23 @@
+@import "../../partials/variables";
+@import "../../partials/mixins";
+
+.header {
+  height: $height-header;
+  background-color: $fill-header;
+  &__block {
+    @include flex(row, flex-start, center);
+    height: 100%;
+    &-logo {
+      @include flex-center;
+      margin-right: 16px;
+      &-img {
+        height: 24px;
+        border: 1px solid white;
+        border-radius: 50%;
+      }
+    }
+    &-title {
+      font-weight: 400;
+    }
+  }
+}
